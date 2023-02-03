@@ -311,6 +311,7 @@ export function buildThunks<
   > = async (
     arg,
     {
+      requestId,
       signal,
       abort,
       rejectWithValue,
@@ -330,6 +331,7 @@ export function buildThunks<
       ) => any = defaultTransformResponse
       let result: QueryReturnValue
       const baseQueryApi = {
+        requestId,
         signal,
         abort,
         dispatch,
